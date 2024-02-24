@@ -40,6 +40,19 @@ func Up(ctx context.Context, l *logger.Logger, storage storage) (err error) {
 			Date:    date(2024, 2, 28),
 			Quota:   1,
 		},
+
+		{
+			HotelID: "reddison",
+			RoomID:  "lux2",
+			Date:    date(2024, 3, 28),
+			Quota:   1,
+		},
+		{
+			HotelID: "reddison",
+			RoomID:  "lux2",
+			Date:    date(2024, 3, 29),
+			Quota:   1,
+		},
 	}
 
 	ctx, err = storage.BeginTransaction(ctx, "")

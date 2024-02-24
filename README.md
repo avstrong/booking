@@ -39,11 +39,17 @@ curl -X POST http://localhost:8092/api/orders/v1 \
      -d '{
          "places": [
              {
-                 "hotel_id": "reddison",
-                 "room_id": "lux",
-                 "from": "2024-02-26T00:00:00Z",
-                 "to": "2024-02-28T00:00:00Z"
-             }
+                "hotel_id": "reddison",
+                "room_id": "lux",
+                "from": "2024-02-26T00:00:00Z",
+                "to": "2024-02-28T00:00:00Z"
+             },
+             {
+                "hotel_id": "reddison",
+                "room_id": "lux2",
+                "from": "2024-03-28T00:00:00Z",
+                "to": "2024-03-29T00:00:00Z"
+            }
          ],
          "payer": {
              "email": "guest@mail.ru"
