@@ -20,29 +20,28 @@ func date(year, month, day int) time.Time {
 	return time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
 }
 
-//nolint:gomnd,gochecknoglobals
-var roomAvailabilities = []*booking.RoomAvailability{
-	{
-		HotelID: "reddison",
-		RoomID:  "lux",
-		Date:    date(2024, 2, 26),
-		Quota:   2,
-	},
-	{
-		HotelID: "reddison",
-		RoomID:  "lux",
-		Date:    date(2024, 2, 27),
-		Quota:   4,
-	},
-	{
-		HotelID: "reddison",
-		RoomID:  "lux",
-		Date:    date(2024, 2, 28),
-		Quota:   1,
-	},
-}
-
 func Up(ctx context.Context, l *logger.Logger, storage storage) (err error) {
+	roomAvailabilities := []*booking.RoomAvailability{
+		{
+			HotelID: "reddison",
+			RoomID:  "lux",
+			Date:    date(2024, 2, 26),
+			Quota:   2,
+		},
+		{
+			HotelID: "reddison",
+			RoomID:  "lux",
+			Date:    date(2024, 2, 27),
+			Quota:   4,
+		},
+		{
+			HotelID: "reddison",
+			RoomID:  "lux",
+			Date:    date(2024, 2, 28),
+			Quota:   1,
+		},
+	}
+
 	ctx, err = storage.BeginTransaction(ctx, "")
 	if err != nil {
 		return fmt.Errorf("begin transaction: %w", err)
